@@ -16,24 +16,27 @@ public class Insertion
    */
   public static int[] sort(int[] arr) {
     // Your algorithm goes here!
-     int i, key, j;
-     int n;
-    for (i = 1; i < n; i++)
-    {
-        key = arr[i];
-        j = i - 1;
- 
-        // Move elements of arr[0..i-1], 
-        // that are greater than key, to one
-        // position ahead of their
-        // current position
-        while (j >= 0 && arr[j] > key)
-        {
-            arr[j + 1] = arr[j];
-            j = j - 1;
-        }
-        arr[j + 1] = key;
-  }}
+     int size = arr.length;
+
+    for (int step = 1; step < size; step++) {
+      int key = arr[step];
+      int j = step - 1;
+
+      // Compare key with each element on the left of it until an element smaller than
+      // it is found.
+      // For descending order, change key<array[j] to key>array[j].
+      while (j >= 0 && key < arr[j]) {
+        arr[j + 1] = arr[j];
+        --j;
+      }
+
+      // Place key at after the element just smaller than it.
+      arr[j + 1] = key;
+    }
+  return arr[]
+}
+
+
   
   public static void main(String[] args) {
     int[] arr = {53,85,93,25,39,27,42,5,24,45,33,51,5,80,4,7,91,
