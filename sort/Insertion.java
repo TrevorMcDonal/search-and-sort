@@ -33,7 +33,7 @@ public class Insertion
       // Place key at after the element just smaller than it.
       arr[j + 1] = key;
     }
-  return arr[]
+  return arr;
 }
 
 
